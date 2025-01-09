@@ -1,0 +1,14 @@
+/home/Root/school/term-4/net/class-1/bin/Debug/net8.0/c1
+/home/Root/school/term-4/net/class-1/bin/Debug/net8.0/c1.deps.json
+/home/Root/school/term-4/net/class-1/bin/Debug/net8.0/c1.runtimeconfig.json
+/home/Root/school/term-4/net/class-1/bin/Debug/net8.0/c1.dll
+/home/Root/school/term-4/net/class-1/bin/Debug/net8.0/c1.pdb
+/home/Root/school/term-4/net/class-1/obj/Debug/net8.0/c1.GeneratedMSBuildEditorConfig.editorconfig
+/home/Root/school/term-4/net/class-1/obj/Debug/net8.0/c1.AssemblyInfoInputs.cache
+/home/Root/school/term-4/net/class-1/obj/Debug/net8.0/c1.AssemblyInfo.cs
+/home/Root/school/term-4/net/class-1/obj/Debug/net8.0/c1.csproj.CoreCompileInputs.cache
+/home/Root/school/term-4/net/class-1/obj/Debug/net8.0/c1.dll
+/home/Root/school/term-4/net/class-1/obj/Debug/net8.0/refint/c1.dll
+/home/Root/school/term-4/net/class-1/obj/Debug/net8.0/c1.pdb
+/home/Root/school/term-4/net/class-1/obj/Debug/net8.0/c1.genruntimeconfig.cache
+/home/Root/school/term-4/net/class-1/obj/Debug/net8.0/ref/c1.dll
