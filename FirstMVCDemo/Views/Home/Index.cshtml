@@ -1,0 +1,16 @@
+﻿
+<h2>Index</h2>
+
+@*Hello My @name*@
+
+Hellow my @ViewData["name"]
+
+<h2> Furnitures </h2>
+
+    <ol>
+        @foreach(var items in (List<string>)ViewData["furnitures"])
+            {
+                <li>@items</li>
+            }
+    </ol>
+

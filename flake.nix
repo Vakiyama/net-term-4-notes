@@ -26,6 +26,7 @@
             gnumake
             icu
             openssl
+            dotnet-ef
           ] ++ xorgLibs;
 
           shellHook = ''
