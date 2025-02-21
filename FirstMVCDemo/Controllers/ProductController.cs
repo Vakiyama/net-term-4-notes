@@ -9,12 +9,13 @@ namespace FirstMVCDemo.Controllers
 {
     public class ProductController : Controller
     {
-        List<Products> products = new List<Products>()
+              private readonly AppDbContext _context;
+               // Inject the DbContext via constructor
+        public ProductController(AppDbContext context)
         {
-            new Products{Id= 1, Name="Samsung", Description="TV"},
-            new Products{Id=2, Name="Nike", Description="Shoe"},
-            new Products{Id=3, Name="Cat", Description="Jacket"}
-        };
+            _context = context;
+        }
+
 
         // GET: Product
         public JsonResult ProductData()

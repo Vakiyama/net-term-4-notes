@@ -1,23 +1,39 @@
 using Microsoft.AspNetCore.Mvc;
+
 using class_2.Models;
 
-namespace MyMvcApp.Controllers
+namespace class_2.Data
 {
     [Route("[controller]")]
     [ApiController]
     public class ProductController : Controller
     {
+       private readonly AppDbContext _context;
+
+        // Inject the DbContext via constructor
+        public ProductController(AppDbContext context)
+        {
+            _context = context;
+        }
+
         [HttpGet]
         public IActionResult Index()
         {
-            var products = new List<Product>
+          if (!_context.Products.Any())
             {
-                new Product { Id = 1, Name = "Laptop", Price = 999.99m },
-                new Product { Id = 2, Name = "Smartphone", Price = 599.99m },
-                new Product { Id = 3, Name = "Tablet", Price = 299.99m }
-            };
+                var defaultProducts = new List<Product>
+                {
+                    new Product { Name = "Laptop", Price = 999.99m },
+                    new Product { Name = "Smartphone", Price = 599.99m },
+                    new Product { Name = "Tablet", Price = 299.99m }
+                };
 
-            // Store the products in ViewData
+                _context.Products.AddRange(defaultProducts);
+                _context.SaveChanges();
+            }
+
+            var products = _context.Products.ToList();
+
             ViewData["Products"] = products;
 
             return View();
@@ -26,13 +42,8 @@ namespace MyMvcApp.Controllers
         [HttpGet("json")]
         public IActionResult GetProductsJson()
         {
-            var products = new List<Product>
-            {
-                new Product { Id = 1, Name = "Laptop", Price = 999.99m },
-                new Product { Id = 2, Name = "Smartphone", Price = 599.99m },
-                new Product { Id = 3, Name = "Tablet", Price = 299.99m }
-            };
-
+            // Fetch products from the database
+            var products = _context.Products.ToList();
             return Ok(products);
         }
     }
